@@ -1,13 +1,18 @@
+
 * {
   box-sizing: border-box;
   font-family: 'Avenir Heavy', sans-serif!important;
 }
 
-input[value] {
+input[value], textarea {
   font-style: italic;
   font-size: 16px;
   font-weight: 100;
   color: #b4b4b4;
+}
+
+body {
+  background-color: #fff;
 }
 
 [hidden] {
@@ -32,7 +37,6 @@ a {
 }
 /* .center {justify-content: center; align-items: center} */
 /* .flex {flex: 1} */
-
 @font-face {
   font-family: 'Avenir Heavy';
   src: url(../fonts/AEH.ttf) format('truetype');
@@ -104,9 +108,10 @@ nav {
   flex-direction: column;
   margin: 0 auto;
   border: 2px solid black;
-  height: 30vh;
-  width: 60vh;
+  height: 60vh;
+  width: 60vw;
   font-size: 2vw;
+  padding: 48px;
 }
 
 #contact-form input {
@@ -117,21 +122,21 @@ nav {
   display: flex;
 }
 
-label {
-  padding: 1vw;
-}
-
 label  {
 /* border-radius: 1px; */
-  /* margin-left: 2%; */
-  /* margin-top: 2%; */
-  /* flex-basis: 2%; */
+  padding: 1vw;
+  /* margin-right: 2%; */
+  /* flex-basis: %; */
   align-self: center;
+  flex: 1;
+
 }
 
 .input-field {
   height: 3.5vh;
   margin: 2%;
+  margin-right: 2.9%;
+  flex: 2;
 }
 
 #form-title {
@@ -157,4 +162,56 @@ label  {
   padding: 8px;
   text-align: center;
   flex-basis: 100%;
+}
+
+#contact-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+[for="comments"]  {
+  flex-basis: 100%;
+  flex: 1;
+}
+
+#comments {
+  flex-basis: 100%;
+  flex: 2;
+  width: 100%;
+}
+
+#email {
+  align-self: flex-end;
+}
+
+#email-input {
+  flex-basis: 100%;
+}
+
+
+@media only screen and (min-width: 375px) and (max-width: 575px) {
+  #contact-form {
+    width: 60vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 1023px) {
+  #contact-form {
+    width: 60vw;
+    height: 30vh;
+    justify-content: space-between;
+    align-self: space-between;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #contact-form {
+    width: 60vw!important;
+    padding: 3rem;
+  }
 }
